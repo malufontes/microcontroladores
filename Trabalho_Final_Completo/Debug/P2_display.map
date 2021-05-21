@@ -1,0 +1,575 @@
+******************************************************************************
+                  TI ARM Linker Unix v20.2.2                   
+******************************************************************************
+>> Linked Tue May  4 17:58:06 2021
+
+OUTPUT FILE NAME:   <P2_display.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00002525
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  000030c5  0003cf3b  R  X
+  SRAM                  20000000   00008000  000005f0  00007a10  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    000030c8   000030c8    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    000024d6   000024d6    r-x .text
+  00002744    00002744    000008d3   000008d3    r-- .const
+  00003018    00003018    000000b0   000000b0    r-- .cinit
+20000000    20000000    000005f0   00000000    rw-
+  20000000    20000000    00000338   00000000    rw- .bss
+  20000338    20000338    00000200   00000000    rw- .stack
+  20000538    20000538    000000b8   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    000024d6     
+                  0000026c    00000ad4     Nokia5110.obj (.text)
+                  00000d40    00000848     main.obj (.text)
+                  00001588    000002a0     rtsv7M4_T_le_v4SPD16_eabi.lib : mktime.c.obj (.text:__mktime32)
+                  00001828    000001b6                                   : fd_add_t2.asm.obj (.text)
+                  000019de    00000136                                   : fd_div_t2.asm.obj (.text)
+                  00001b14    00000134                                   : localtim.c.obj (.text:__localtime32)
+                  00001c48    00000132     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  00001d7a    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.c.obj (.text:_nop)
+                  00001d7c    00000110     driverlib.lib : sysctl.obj (.text:SysCtlClockGet)
+                  00001e8c    000000f4                   : sysctl.obj (.text:SysCtlClockSet)
+                  00001f80    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  0000201c    00000096                                   : ull_div_t2.asm.obj (.text)
+                  000020b2    0000007a     driverlib.lib : adc.obj (.text:ADCSequenceStepConfigure)
+                  0000212c    0000006e     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_tos_t2.asm.obj (.text)
+                  0000219a    0000006e                                   : ll_div_t2.asm.obj (.text)
+                  00002208    00000068     driverlib.lib : interrupt.obj (.text:IntEnable)
+                  00002270    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  000022d8    00000056     driverlib.lib : gpio.obj (.text:GPIOIntTypeSet)
+                  0000232e    00000050                   : adc.obj (.text:ADCSequenceConfigure)
+                  0000237e    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : div0.asm.obj (.text)
+                  00002380    00000048                                   : hosttime.c.obj (.text:HOSTtime)
+                  000023c8    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  0000240c    00000040                                   : u_divt2.asm.obj (.text)
+                  0000244c    00000038                                   : trgmsg.c.obj (.text:__TI_writemsg)
+                  00002484    00000038                                   : fs_tod_t2.asm.obj (.text)
+                  000024bc    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  000024f0    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : trgmsg.c.obj (.text:__TI_readmsg)
+                  00002524    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00002558    0000002e     driverlib.lib : adc.obj (.text:ADCIntStatus)
+                  00002586    00000002     --HOLE-- [fill = 0]
+                  00002588    0000002c                   : hibernate.obj (.text:HibernateRTCSet)
+                  000025b4    0000002a                   : gpio.obj (.text:GPIODirModeSet)
+                  000025de    0000001e                   : adc.obj (.text:ADCSequenceDataGet)
+                  000025fc    0000001c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00002618    00000018     driverlib.lib : adc.obj (.text:ADCProcessorTrigger)
+                  00002630    00000018                   : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  00002648    00000014                   : hibernate.obj (.text:HibernateEnableExpClk)
+                  0000265c    00000014                   : hibernate.obj (.text:HibernateRTCEnable)
+                  00002670    00000014                   : systick.obj (.text:SysTickDisable)
+                  00002684    00000014                   : systick.obj (.text:SysTickEnable)
+                  00002698    00000014                   : systick.obj (.text:SysTickIntEnable)
+                  000026ac    00000010                   : interrupt.obj (.text:IntMasterEnable)
+                  000026bc    00000010                   : systick.obj (.text:SysTickPeriodSet)
+                  000026cc    00000010                   : hibernate.obj (.text:_HibernateWriteComplete)
+                  000026dc    0000000e                   : adc.obj (.text:ADCSequenceEnable)
+                  000026ea    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : time.c.obj (.text:__time32)
+                  000026f8    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00002706    0000000c     driverlib.lib : cpu.obj (.text:CPUcpsie)
+                  00002712    0000000c                   : gpio.obj (.text:GPIOIntEnable)
+                  0000271e    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  0000272a    0000000a     driverlib.lib : adc.obj (.text:ADCIntClear)
+                  00002734    00000006                   : sysctl.obj (.text:SysCtlDelay)
+                  0000273a    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  0000273e    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00002744    000008d3     
+                  00002744    000001f8     main.obj (.const:.string:screen3)
+                  0000293c    000001e0     Nokia5110.obj (.const:ASCII)
+                  00002b1c    00000070     Nokia5110.obj (.const:.string:$P$T0$1)
+                  00002b8c    00000070     driverlib.lib : interrupt.obj (.const)
+                  00002bfc    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  00002c68    00000060     rtsv7M4_T_le_v4SPD16_eabi.lib : mktime.c.obj (.const:$O1$$)
+                  00002cc8    00000027     main.obj (.const:.string:nu0)
+                  00002cef    00000027     main.obj (.const:.string:nu1)
+                  00002d16    00000027     main.obj (.const:.string:nu2)
+                  00002d3d    00000027     main.obj (.const:.string:nu3)
+                  00002d64    00000027     main.obj (.const:.string:nu4)
+                  00002d8b    00000027     main.obj (.const:.string:nu5)
+                  00002db2    00000027     main.obj (.const:.string:nu6)
+                  00002dd9    00000027     main.obj (.const:.string:nu7)
+                  00002e00    00000027     main.obj (.const:.string:nu8)
+                  00002e27    00000027     main.obj (.const:.string:nu9)
+                  00002e4e    00000024     main.obj (.const:.string:term0)
+                  00002e72    00000024     main.obj (.const:.string:term1)
+                  00002e96    00000024     main.obj (.const:.string:term2)
+                  00002eba    00000024     main.obj (.const:.string:term3)
+                  00002ede    00000023     main.obj (.const:.string:fri)
+                  00002f01    00000023     main.obj (.const:.string:mon)
+                  00002f24    00000023     main.obj (.const:.string:sat)
+                  00002f47    00000023     main.obj (.const:.string:sun)
+                  00002f6a    00000023     main.obj (.const:.string:thurs)
+                  00002f8d    00000023     main.obj (.const:.string:tues)
+                  00002fb0    00000023     main.obj (.const:.string:wed)
+                  00002fd3    0000000a     main.obj (.const:.string:off)
+                  00002fdd    0000000a     main.obj (.const:.string:on)
+                  00002fe7    00000008     Nokia5110.obj (.const:.string:Masks)
+                  00002fef    00000005     main.obj (.const:.string:bar)
+                  00002ff4    00000005     main.obj (.const:.string:dot)
+                  00002ff9    00000003     main.obj (.const:.string:num0)
+                  00002ffc    00000003     main.obj (.const:.string:num1)
+                  00002fff    00000003     main.obj (.const:.string:num2)
+                  00003002    00000003     main.obj (.const:.string:num3)
+                  00003005    00000003     main.obj (.const:.string:num4)
+                  00003008    00000003     main.obj (.const:.string:num5)
+                  0000300b    00000003     main.obj (.const:.string:num6)
+                  0000300e    00000003     main.obj (.const:.string:num7)
+                  00003011    00000003     main.obj (.const:.string:num8)
+                  00003014    00000003     main.obj (.const:.string:num9)
+
+.cinit     0    00003018    000000b0     
+                  00003018    00000086     (.cinit..data.load) [load image, compression = lzss]
+                  0000309e    00000002     --HOLE-- [fill = 0]
+                  000030a0    0000000c     (__TI_handler_table)
+                  000030ac    00000004     --HOLE-- [fill = 0]
+                  000030b0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000030b8    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.bss       0    20000000    00000338     UNINITIALIZED
+                  20000000    000001f8     (.common:Screen)
+                  200001f8    00000120     rtsv7M4_T_le_v4SPD16_eabi.lib : trgmsg.c.obj (.bss:_CIOBUF_)
+                  20000318    00000008     (.common:parmbuf)
+                  20000320    00000004     (.common:AUX)
+                  20000324    00000004     (.common:MAX)
+                  20000328    00000004     (.common:MIN)
+                  2000032c    00000004     (.common:estado)
+                  20000330    00000004     (.common:lock)
+                  20000334    00000004     (.common:tempo)
+
+.data      0    20000538    000000b8     UNINITIALIZED
+                  20000538    00000028     main.obj (.data:numeros)
+                  20000560    00000028     main.obj (.data:numg)
+                  20000588    00000024     rtsv7M4_T_le_v4SPD16_eabi.lib : localtim.c.obj (.data:local_tm)
+                  200005ac    0000001c     main.obj (.data:semana)
+                  200005c8    00000010     rtsv7M4_T_le_v4SPD16_eabi.lib : tmzone.c.obj (.data:_tz)
+                  200005d8    00000010     main.obj (.data:termo)
+                  200005e8    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.c.obj (.data:$O1$$)
+
+.stack     0    20000338    00000200     UNINITIALIZED
+                  20000338    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  2000033c    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    ./
+       Nokia5110.obj                  2772   600       504    
+       main.obj                       2120   1343      148    
+       tm4c123gh6pm_startup_ccs.obj   12     620       0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         4904   2563      652    
+                                                              
+    /home/malufontes/ti/TivaWare_C_Series-2.1.4.178/driverlib/ccs/Debug/driverlib.lib
+       sysctl.obj                     574    108       0      
+       gpio.obj                       470    0         0      
+       adc.obj                        326    0         0      
+       interrupt.obj                  120    112       0      
+       hibernate.obj                  100    0         0      
+       systick.obj                    76     0         0      
+       cpu.obj                        12     0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         1678   220       0      
+                                                              
+    /home/malufontes/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.2.LTS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
+       mktime.c.obj                   672    96        0      
+       fd_add_t2.asm.obj              438    0         0      
+       trgmsg.c.obj                   108    0         288    
+       localtim.c.obj                 308    0         36     
+       fd_div_t2.asm.obj              310    0         0      
+       memcpy_t2.asm.obj              156    0         0      
+       ull_div_t2.asm.obj             150    0         0      
+       fd_tos_t2.asm.obj              110    0         0      
+       ll_div_t2.asm.obj              110    0         0      
+       copy_decompress_lzss.c.obj     104    0         0      
+       hosttime.c.obj                 72     0         0      
+       autoinit.c.obj                 68     0         0      
+       u_divt2.asm.obj                64     0         0      
+       fs_tod_t2.asm.obj              56     0         0      
+       boot_cortex_m.c.obj            52     0         0      
+       copy_zero_init.c.obj           28     0         0      
+       tmzone.c.obj                   0      0         16     
+       copy_decompress_none.c.obj     14     0         0      
+       time.c.obj                     14     0         0      
+       _lock.c.obj                    2      0         8      
+       hostopen.c.obj                 0      0         8      
+       exit.c.obj                     4      0         0      
+       pre_init.c.obj                 4      0         0      
+       div0.asm.obj                   2      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         2846   96        356    
+                                                              
+       Stack:                         0      0         512    
+       Linker Generated:              0      170       0      
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   9428   3049      1520   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000030b8 records: 2, size/record: 8, table size: 16
+	.data: load addr=00003018, load size=00000086 bytes, run addr=20000538, run size=000000b8 bytes, compression=lzss
+	.bss: load addr=000030b0, load size=00000008 bytes, run addr=20000000, run size=00000338 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 000030a0 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+0000272b  ADCIntClear                   
+00002559  ADCIntStatus                  
+00002619  ADCProcessorTrigger           
+0000232f  ADCSequenceConfigure          
+000025df  ADCSequenceDataGet            
+000026dd  ADCSequenceEnable             
+000020b3  ADCSequenceStepConfigure      
+20000320  AUX                           
+0000273f  C$$EXIT                       
+0000247b  C$$IO$$                       
+00002707  CPUcpsie                      
+000025b5  GPIODirModeSet                
+00002713  GPIOIntEnable                 
+000022d9  GPIOIntTypeSet                
+00001c49  GPIOPadConfigSet              
+00002631  GPIOPinTypeGPIOOutput         
+00002381  HOSTtime                      
+00002649  HibernateEnableExpClk         
+0000265d  HibernateRTCEnable            
+00002589  HibernateRTCSet               
+00002209  IntEnable                     
+000026ad  IntMasterEnable               
+20000324  MAX                           
+20000328  MIN                           
+00002fe7  Masks                         
+000006b5  Nokia5110_Clear               
+00000911  Nokia5110_ClearBuffer         
+00000945  Nokia5110_ClrPxl              
+0000093b  Nokia5110_DisplayBuffer       
+000006e5  Nokia5110_DrawFullImage       
+00000bbb  Nokia5110_DrawImage           
+00000c05  Nokia5110_DrawImage_status    
+000002db  Nokia5110_Init                
+000003f5  Nokia5110_OutChar             
+00000435  Nokia5110_OutString           
+00000461  Nokia5110_OutUDec             
+0000072d  Nokia5110_PrintBMP            
+0000099d  Nokia5110_PrintBMP2           
+00000665  Nokia5110_SetCursor           
+00000977  Nokia5110_SetPxl              
+00000a55  Nokia5110_SetPxl_status       
+00000a81  Nokia5110_img                 
+00000b21  Nokia5110_img_16              
+0000271f  ResetISR                      
+20000000  Screen                        
+00001d7d  SysCtlClockGet                
+00001e8d  SysCtlClockSet                
+00002735  SysCtlDelay                   
+000024bd  SysCtlPeripheralEnable        
+00002671  SysTickDisable                
+00002685  SysTickEnable                 
+00002699  SysTickIntEnable              
+000026bd  SysTickPeriodSet              
+200001f8  __CIOBUF_                     
+20000538  __STACK_END                   
+00000200  __STACK_SIZE                  
+20000538  __STACK_TOP                   
+000030b8  __TI_CINIT_Base               
+000030c8  __TI_CINIT_Limit              
+000030a0  __TI_Handler_Table_Base       
+000030ac  __TI_Handler_Table_Limit      
+000023c9  __TI_auto_init_nobinit_nopinit
+00002271  __TI_decompress_lzss          
+000026f9  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+000024f1  __TI_readmsg                  
+00000000  __TI_static_base__            
+0000244d  __TI_writemsg                 
+000025fd  __TI_zero_init_nomemset       
+0000212d  __aeabi_d2f                   
+00001833  __aeabi_dadd                  
+000019df  __aeabi_ddiv                  
+00001829  __aeabi_dsub                  
+00002485  __aeabi_f2d                   
+0000237f  __aeabi_idiv0                 
+0000237f  __aeabi_ldiv0                 
+0000219b  __aeabi_ldivmod               
+00001f81  __aeabi_memcpy                
+00001f81  __aeabi_memcpy4               
+00001f81  __aeabi_memcpy8               
+0000240d  __aeabi_uidiv                 
+0000240d  __aeabi_uidivmod              
+0000201d  __aeabi_uldivmod              
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+00001b15  __localtime32                 
+00001589  __mktime32                    
+UNDEFED   __mpu_init                    
+20000338  __stack                       
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+000026eb  __time32                      
+00002525  _c_int00_noargs               
+200005e8  _lock                         
+00001d7b  _nop                          
+UNDEFED   _system_post_cinit            
+0000273b  _system_pre_init              
+200005c8  _tz                           
+200005ec  _unlock                       
+0000273f  abort                         
+00002fef  bar                           
+ffffffff  binit                         
+00002ff4  dot                           
+2000032c  estado                        
+00002ede  fri                           
+00000000  g_pfnVectors                  
+00001b15  localtime                     
+20000330  lock                          
+000012d5  main                          
+00001f81  memcpy                        
+00001589  mktime                        
+00002f01  mon                           
+00002cc8  nu0                           
+00002cef  nu1                           
+00002d16  nu2                           
+00002d3d  nu3                           
+00002d64  nu4                           
+00002d8b  nu5                           
+00002db2  nu6                           
+00002dd9  nu7                           
+00002e00  nu8                           
+00002e27  nu9                           
+00002ff9  num0                          
+00002ffc  num1                          
+00002fff  num2                          
+00003002  num3                          
+00003005  num4                          
+00003008  num5                          
+0000300b  num6                          
+0000300e  num7                          
+00003011  num8                          
+00003014  num9                          
+20000538  numeros                       
+20000560  numg                          
+00002fd3  off                           
+00002fdd  on                            
+20000318  parmbuf                       
+00002f24  sat                           
+00002744  screen3                       
+200005ac  semana                        
+00002f47  sun                           
+00000d4b  tela1                         
+00000f0d  tela2                         
+00001109  tela3                         
+20000334  tempo                         
+00002e4e  term0                         
+00002e72  term1                         
+00002e96  term2                         
+00002eba  term3                         
+200005d8  termo                         
+00002f6a  thurs                         
+000026eb  time                          
+00000d41  trata_Systick                 
+00002f8d  tues                          
+00002fb0  wed                           
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000000  __TI_static_base__            
+00000000  g_pfnVectors                  
+00000200  __STACK_SIZE                  
+000002db  Nokia5110_Init                
+000003f5  Nokia5110_OutChar             
+00000435  Nokia5110_OutString           
+00000461  Nokia5110_OutUDec             
+00000665  Nokia5110_SetCursor           
+000006b5  Nokia5110_Clear               
+000006e5  Nokia5110_DrawFullImage       
+0000072d  Nokia5110_PrintBMP            
+00000911  Nokia5110_ClearBuffer         
+0000093b  Nokia5110_DisplayBuffer       
+00000945  Nokia5110_ClrPxl              
+00000977  Nokia5110_SetPxl              
+0000099d  Nokia5110_PrintBMP2           
+00000a55  Nokia5110_SetPxl_status       
+00000a81  Nokia5110_img                 
+00000b21  Nokia5110_img_16              
+00000bbb  Nokia5110_DrawImage           
+00000c05  Nokia5110_DrawImage_status    
+00000d41  trata_Systick                 
+00000d4b  tela1                         
+00000f0d  tela2                         
+00001109  tela3                         
+000012d5  main                          
+00001589  __mktime32                    
+00001589  mktime                        
+00001829  __aeabi_dsub                  
+00001833  __aeabi_dadd                  
+000019df  __aeabi_ddiv                  
+00001b15  __localtime32                 
+00001b15  localtime                     
+00001c49  GPIOPadConfigSet              
+00001d7b  _nop                          
+00001d7d  SysCtlClockGet                
+00001e8d  SysCtlClockSet                
+00001f81  __aeabi_memcpy                
+00001f81  __aeabi_memcpy4               
+00001f81  __aeabi_memcpy8               
+00001f81  memcpy                        
+0000201d  __aeabi_uldivmod              
+000020b3  ADCSequenceStepConfigure      
+0000212d  __aeabi_d2f                   
+0000219b  __aeabi_ldivmod               
+00002209  IntEnable                     
+00002271  __TI_decompress_lzss          
+000022d9  GPIOIntTypeSet                
+0000232f  ADCSequenceConfigure          
+0000237f  __aeabi_idiv0                 
+0000237f  __aeabi_ldiv0                 
+00002381  HOSTtime                      
+000023c9  __TI_auto_init_nobinit_nopinit
+0000240d  __aeabi_uidiv                 
+0000240d  __aeabi_uidivmod              
+0000244d  __TI_writemsg                 
+0000247b  C$$IO$$                       
+00002485  __aeabi_f2d                   
+000024bd  SysCtlPeripheralEnable        
+000024f1  __TI_readmsg                  
+00002525  _c_int00_noargs               
+00002559  ADCIntStatus                  
+00002589  HibernateRTCSet               
+000025b5  GPIODirModeSet                
+000025df  ADCSequenceDataGet            
+000025fd  __TI_zero_init_nomemset       
+00002619  ADCProcessorTrigger           
+00002631  GPIOPinTypeGPIOOutput         
+00002649  HibernateEnableExpClk         
+0000265d  HibernateRTCEnable            
+00002671  SysTickDisable                
+00002685  SysTickEnable                 
+00002699  SysTickIntEnable              
+000026ad  IntMasterEnable               
+000026bd  SysTickPeriodSet              
+000026dd  ADCSequenceEnable             
+000026eb  __time32                      
+000026eb  time                          
+000026f9  __TI_decompress_none          
+00002707  CPUcpsie                      
+00002713  GPIOIntEnable                 
+0000271f  ResetISR                      
+0000272b  ADCIntClear                   
+00002735  SysCtlDelay                   
+0000273b  _system_pre_init              
+0000273f  C$$EXIT                       
+0000273f  abort                         
+00002744  screen3                       
+00002cc8  nu0                           
+00002cef  nu1                           
+00002d16  nu2                           
+00002d3d  nu3                           
+00002d64  nu4                           
+00002d8b  nu5                           
+00002db2  nu6                           
+00002dd9  nu7                           
+00002e00  nu8                           
+00002e27  nu9                           
+00002e4e  term0                         
+00002e72  term1                         
+00002e96  term2                         
+00002eba  term3                         
+00002ede  fri                           
+00002f01  mon                           
+00002f24  sat                           
+00002f47  sun                           
+00002f6a  thurs                         
+00002f8d  tues                          
+00002fb0  wed                           
+00002fd3  off                           
+00002fdd  on                            
+00002fe7  Masks                         
+00002fef  bar                           
+00002ff4  dot                           
+00002ff9  num0                          
+00002ffc  num1                          
+00002fff  num2                          
+00003002  num3                          
+00003005  num4                          
+00003008  num5                          
+0000300b  num6                          
+0000300e  num7                          
+00003011  num8                          
+00003014  num9                          
+000030a0  __TI_Handler_Table_Base       
+000030ac  __TI_Handler_Table_Limit      
+000030b8  __TI_CINIT_Base               
+000030c8  __TI_CINIT_Limit              
+20000000  Screen                        
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+200001f8  __CIOBUF_                     
+20000318  parmbuf                       
+20000320  AUX                           
+20000324  MAX                           
+20000328  MIN                           
+2000032c  estado                        
+20000330  lock                          
+20000334  tempo                         
+20000338  __stack                       
+20000538  __STACK_END                   
+20000538  __STACK_TOP                   
+20000538  numeros                       
+20000560  numg                          
+200005ac  semana                        
+200005c8  _tz                           
+200005d8  termo                         
+200005e8  _lock                         
+200005ec  _unlock                       
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+
+[157 symbols]
